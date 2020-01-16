@@ -66,13 +66,13 @@ function App() {
 
   function filterByCategory(filteredCategory) {
       setEvents(filteredEvents);
+      let tmpEvents = [];
       /* Some of categories are capitalized*/
       if (filteredCategory !== 'reset') {
           let capitalizeFilter = `${filteredCategory.charAt(0).toUpperCase()}${filteredCategory.slice(1)}`;
-          setFilteredEvents(
-              filteredEvents.filter(event => event.category.includes(filteredCategory) || event.category.includes(capitalizeFilter)
-              ));
-          setEvents(filteredEvents);
+          setEvents(
+              tmpEvents = [...filteredEvents.filter(event => event.category.includes(filteredCategory) || event.category.includes(capitalizeFilter)
+              )]);
       }
   }
 
